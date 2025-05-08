@@ -40,11 +40,22 @@ font-size: 30px;
     position: relative;
 }
 
-@media (max-width: 600px) {
+.sh-modul{
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 25px;
+}
+
+@media (max-width: 640px) {
     .header-logo {
-      width: 100px;
+        width: 100px;
     }
-  }
+    .sh-modul{
+        width: 95%;
+        margin: 0 auto;
+        border-radius: 15px;
+    }
+}
 
 /* .text-lime-400{
     color: #9BEC00;
