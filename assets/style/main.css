@@ -1,16 +1,47 @@
-@font-face {
-    font-family: 'shab';
-    src: url();
-}
+
 
 @font-face {
-    font-family: 'MyFont';
-    src: url('fonts/MyFont.woff2') format('woff2'),
-         url('fonts/MyFont.woff') format('woff');
+    font-family: 'Shabnam';
+    src: url('../font/shabnam/Shabnam.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
-
-body {
-    font-family: 'MyFont', sans-serif;
+@font-face {
+    font-family: 'Shabnam';
+    src: url('../font/shabnam/Shabnam-Light.ttf') format('truetype');
+    font-weight: lighter;
+    font-style: normal;
 }
+@font-face {
+    font-family: 'Shabnam';
+    src: url('../font/shabnam/Shabnam-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Shabnam';
+    src: url('../font/shabnam/Shabnam-Thin.ttf') format('truetype');
+    font-weight: bolder;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Shabnam';
+    font-weight: bold;
+}
+
+.ss{
+font-weight: bolder;
+font-size: 30px;
+}
+
+.header-logo{
+    width: 150px;
+    position: relative;
+}
+
+@media (max-width: 600px) {
+    .header-logo {
+      width: 100px;
+    }
+  }
