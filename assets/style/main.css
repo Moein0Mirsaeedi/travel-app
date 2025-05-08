@@ -43,7 +43,8 @@ font-size: 30px;
 .sh-modul{
     width: 90%;
     margin: 0 auto;
-    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.836);
+    border-radius: 20px;
 }
 
 @media (max-width: 640px) {
