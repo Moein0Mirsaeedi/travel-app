@@ -47,6 +47,29 @@ font-size: 30px;
     border-radius: 20px;
 }
 
+
+.ins-icon{
+    font-size: 22px;
+}
+
+.brand-us{
+    width: 100px;
+}
+
+.content-brand-us{
+    padding: 0 100px;
+}
+
+.cus-radius{
+    border-radius: 10px;
+}
+
+.cus-customers{
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
 @media (max-width: 640px) {
     .header-logo {
         width: 100px;
@@ -56,10 +79,12 @@ font-size: 30px;
         margin: 0 auto;
         border-radius: 15px;
     }
-}
-
-.ins-icon{
-    font-size: 22px;
+    .brand-us{
+        width: 75px;
+    }
+    .content-brand-us{
+        padding: 0 0;
+    }
 }
 
 /* .text-lime-400{
