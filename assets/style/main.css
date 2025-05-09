@@ -102,3 +102,11 @@ font-size: 30px;
 .moon{
     display: none;
 }
+
+.dark\:bg-neutral-900:where(.dark,.dark *){
+    background-color: #222831;
+}
+
+.dark\:text-blue-500:where(.dark,.dark *){
+    color: oklch(.841 .238 128.85);
+}

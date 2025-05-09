@@ -45,6 +45,44 @@
     else if (isDarkOrAuto && html.classList.contains('light')) html.classList.remove('light');
     else if (isDarkOrAuto && !html.classList.contains('dark')) html.classList.add('dark');
     else if (isLightOrAuto && !html.classList.contains('light')) html.classList.add('light');
+
+    document.addEventListener("DOMContentLoaded", () => {
+    let themeToggleBtn = document.getElementById("themeBtn"); 
+    let sun = document.getElementById("sun"); 
+    let moon = document.getElementById("moon"); 
+    let htmlElement = document.getElementsByTagName("html")[0];
+
+    if (htmlElement.classList.contains("dark")) {
+        sun.style.display = "none";
+        moon.style.display = "block";
+    }else{
+        sun.style.display = "block";
+        moon.style.display = "none";
+    }
+
+    themeToggleBtn.addEventListener("click", () => {
+        console.log(htmlElement.classList);
+
+        if (htmlElement.classList.contains("dark")) {
+            htmlElement.classList.remove("dark");
+            htmlElement.classList.add("light");
+            localStorage.setItem("hs_theme", "light");
+            sun.style.display = "block";
+            moon.style.display = "none";
+        } else {
+            htmlElement.classList.remove("light");
+            htmlElement.classList.add("dark");
+            localStorage.setItem("hs_theme", "dark");
+            sun.style.display = "none";
+            moon.style.display = "block";
+        }
+    });
+
+    const savedTheme = localStorage.getItem("hs_theme");
+    if (savedTheme) {
+        htmlElement.classList.add(savedTheme);
+    }
+    });
   </script>
 
 
@@ -109,18 +147,24 @@
         <a class="flex-none text-lime-500 rounded-xl text-xl inline-block font-semibold focus:outline-hidden focus:opacity-80 ss" href="" aria-label="Preline">
           <!-- رهیار
           <span class="text-sm font-light">هر یاری، رهیار نیست</span> -->
-          <img class="header-logo" src="assets/images/Profile.jpg" alt="">
+          <img class="header-logo" src="assets/images/Profile.png" alt="">
         </a>
         <!-- End Logo -->
       </div>
 
       <!-- Button Group -->
       <div class="flex items-center gap-x-1 lg:gap-x-2 ms-auto py-1 lg:ps-6 lg:order-3 lg:col-span-3">
-        <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium text-nowrap rounded-xl bg-white border border-gray-200 text-black hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-white/10 dark:text-white dark:hover:text-white dark:focus:text-white">
-          آقا رضا
-        </button>
+        <a href="ai.html">
+            <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium text-nowrap rounded-xl bg-white border border-gray-200 text-black hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-white/10 dark:text-white dark:hover:text-white dark:focus:text-white">
+            آقا رضا
+            </button>
+        </a>
         <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium text-nowrap rounded-xl border border-transparent bg-lime-400 text-black hover:bg-lime-500 focus:outline-hidden focus:bg-lime-500 transition disabled:opacity-50 disabled:pointer-events-none">
           پنل کاربری
+        </button>
+        <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium text-nowrap rounded-xl border border-transparent bg-lime-400 hover:bg-lime-500 focus:outline-hidden focus:bg-lime-500 transition disabled:opacity-50 disabled:pointer-events-none content-theme" id="themeBtn">
+          <ion-icon class="theme-btn sun" id="sun" name="sunny-outline"></ion-icon>
+          <ion-icon class="theme-btn moon" id="moon" name="moon-outline"></ion-icon>
         </button>
 
         <div class="lg:hidden">
@@ -143,22 +187,22 @@
       <div id="hs-navbar-hcail" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow lg:block lg:w-auto lg:basis-auto lg:order-2 lg:col-span-6" aria-labelledby="hs-navbar-hcail-collapse">
         <div class="flex flex-col gap-y-4 gap-x-0 mt-5 lg:flex-row lg:justify-center lg:items-center lg:gap-y-0 lg:gap-x-7 lg:mt-0">
           <div>
-            <a class="relative inline-block text-black focus:outline-hidden before:absolute before:bottom-0 before:start-0 before:-z-1 before:w-full before:h-1 before:bg-lime-400 dark:text-white" href="#" aria-current="page">خانه</a>
+            <a class="relative inline-block text-black focus:outline-hidden before:absolute before:bottom-0 before:start-0 before:-z-1 before:w-full before:h-1 before:bg-lime-400 dark:text-white" href="index.html" aria-current="page">خانه</a>
+          </div>
+            <div>
+              <a class="inline-block text-black hover:text-gray-600 focus:outline-hidden focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="toor.html">تور ها</a>
+            </div>
+          <div>
+            <a class="inline-block text-black hover:text-gray-600 focus:outline-hidden focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="research.html">مقالات</a>
           </div>
           <div>
-            <a class="inline-block text-black hover:text-gray-600 focus:outline-hidden focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="toor.html">تور ها</a>
-          </div>
-          <div>
-            <a class="inline-block text-black hover:text-gray-600 focus:outline-hidden focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="#">مقالات</a>
-          </div>
-          <div>
-            <a class="inline-block text-black hover:text-gray-600 focus:outline-hidden focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="#">وبلاگ</a>
+            <a class="inline-block text-black hover:text-gray-600 focus:outline-hidden focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="blog.html">وبلاگ</a>
           </div>
           <div>
             <a class="inline-block text-black hover:text-gray-600 focus:outline-hidden focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="#">تور های من</a>
           </div>
           <div>
-            <a class="inline-block text-black hover:text-gray-600 focus:outline-hidden focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="#">درباره ما</a>
+            <a class="inline-block text-black hover:text-gray-600 focus:outline-hidden focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="#footer">درباره ما</a>
           </div>
         </div>
       </div>
@@ -292,7 +336,7 @@
           <img class="brand-us" src="assets/images/AliBaba.png" alt="AliBaba">
           <img class="brand-us cus-radius" src="assets/images/Jobinja.png" alt="Jobinja">
         </div>
-        <p class="cus-customers">همکاران ما</p>
+          <p class="mt-1 text-gray-600 dark:text-neutral-400 cus-customers">همکاران ما</p>
       </div>
     </div>
     <!-- End Clients -->
@@ -467,8 +511,8 @@
     <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
       <!-- Title -->
       <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-        <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">وبلاگ</h2>
-        <p class="mt-1 text-gray-600 dark:text-neutral-400">مطالب پربازدید این ماه را مشاهده کنید</p>
+        <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">مقالات</h2>
+        <p class="mt-1 text-gray-600 dark:text-neutral-400">مقالات پربازدید این ماه را مشاهده کنید</p>
       </div>
       <!-- End Title -->
 
@@ -545,7 +589,7 @@
       <!-- Card -->
       <div class="mt-12 text-center">
         <a class="py-3 px-4 inline-flex items-center gap-x-1 text-sm font-medium rounded-full bg-lime-400 text-black shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-blue-500 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800" href="#">
-          مطالب بیشتر
+          مقالات بیشتر
           <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
         </a>
       </div>
@@ -941,6 +985,7 @@
   <!-- ========== END FOOTER ========== -->
 
   <script src="assets/script/index.js"></script>
+  <script src="assets/script/main.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </body>
