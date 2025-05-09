@@ -110,3 +110,7 @@ font-size: 30px;
 .dark\:text-blue-500:where(.dark,.dark *){
     color: oklch(.841 .238 128.85);
 }
+
+.bg-blue-600{
+    background-color: oklch(.841 .238 128.85);
+}
