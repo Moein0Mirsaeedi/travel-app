@@ -94,3 +94,11 @@ font-size: 30px;
 .bg-lime-400{
     color: #9BEC00;
 } */
+
+.content-theme{
+    height: 38px;
+}
+
+.moon{
+    display: none;
+}
